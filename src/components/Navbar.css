@@ -1,0 +1,89 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background 0.3s, padding 0.3s, border-color 0.3s;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(13, 9, 6, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom-color: var(--border);
+  padding: 14px 0;
+}
+
+.navbar__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
+
+.navbar__link {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.navbar__link:hover { color: var(--text-primary); background: rgba(196,88,28,0.06); }
+.navbar__link--active { color: var(--text-primary); }
+
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.navbar__hamburger span {
+  display: block;
+  width: 22px; height: 1.5px;
+  background: var(--text-secondary);
+  border-radius: 1px;
+}
+.navbar__hamburger:hover span { background: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .navbar__hamburger { display: flex; }
+  .navbar__links {
+    position: fixed;
+    top: 61px; left: 0; right: 0;
+    flex-direction: column;
+    background: rgba(13,9,6,0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px 24px;
+    gap: 2px;
+    transform: translateY(-110%);
+    transition: transform 0.25s ease;
+  }
+  .navbar__links--open { transform: translateY(0); }
+  .navbar__link { padding: 10px 0; border-radius: 0; }
+}
