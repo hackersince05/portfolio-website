@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Global reset and design tokens — add to this file as we build */
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --orange:       #c4581c;
-  --blush:        #c9837a;
-  --accent-grad:  linear-gradient(135deg, #c4581c, #c9837a);
-  --bg:           #0d0906;
-  --bg-2:         #120d09;
-  --bg-card:      rgba(255, 235, 220, 0.03);
-  --border:       rgba(196, 88, 28, 0.14);
-  --border-hover: rgba(196, 88, 28, 0.4);
-  --text-primary:   #f2ede8;
-  --text-secondary: #907870;
-  --text-muted:     #503830;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+:root {
+  --orange:           #c4581c;
+  --blush:            #c9837a;
+  --accent-grad:      linear-gradient(135deg, #c4581c, #c9837a);
+  --bg:               #0d0906;
+  --bg-2:             #120d09;
+  --bg-card:          rgba(255, 235, 220, 0.03);
+  --border:           rgba(196, 88, 28, 0.14);
+  --border-hover:     rgba(196, 88, 28, 0.4);
+  --text-primary:     #f2ede8;
+  --text-secondary:   #907870;
+  --text-muted:       #503830;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -27,21 +33,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.2; }
-
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
 .gradient-text {
   background: linear-gradient(135deg, #c4581c, #c9837a);
   -webkit-background-clip: text;
@@ -49,94 +40,7 @@ h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.2; }
   background-clip: text;
 }
 
-.section { padding: 96px 0; }
-
-.container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
-
-.section-label {
-  display: block;
-  text-align: center;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 14px;
-}
-
-.section-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 56px;
-  color: var(--text-primary);
-}
-
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-.card:hover {
-  border-color: var(--border-hover);
-  box-shadow: 0 8px 32px rgba(196, 88, 28, 0.08);
-}
-
-/* ---- Base button ---- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 28px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
-}
-
-/* Hero CTAs — pill, black → white on hover */
-.btn-cta {
-  border-radius: 50px;
-  background: #0d0906;
-  color: var(--text-primary);
-  border: 1px solid rgba(255,255,255,0.15);
-}
-.btn-cta:hover {
-  background: var(--text-primary);
-  color: #0d0906;
-  border-color: var(--text-primary);
-  transform: translateY(-1px);
-}
-
-/* Standard primary (orange gradient) */
-.btn-primary {
-  background: var(--accent-grad);
-  color: #fff;
-}
-.btn-primary:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
-}
-
-/* Ghost (outlined) */
-.btn-ghost {
-  background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-}
-.btn-ghost:hover {
-  border-color: var(--border-hover);
-  color: var(--text-primary);
-  transform: translateY(-1px);
-}
-
-.divider {
-  height: 1px;
-  background: var(--border);
+@keyframes blink {
+  0%, 100% {opacity: 1;}
+  50%       {opacity: 0;}
 }
